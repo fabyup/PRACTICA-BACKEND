@@ -1,10 +1,10 @@
 // controllers/usuarioController.js
-const db = require("../config/db");
+import { execute } from "../config/database";
 
 // Obtener todos los usuarios
 const obtenerUsuarios = async (req, res) => {
   try {
-    const [rows] = await db.execute("SELECT * FROM usuarios");
+    const [rows] = await execute("SELECT * FROM usuarios");
     res.json(rows);
   } catch (error) {
     res.status(500).json({ message: "Error al obtener usuarios", error });
@@ -17,7 +17,7 @@ const crearUsuario = async (req, res) => {
   try {
     const [
       result
-    ] = await db.execute("INSERT INTO usuarios (nombre, email) VALUES (?, ?)", [
+    ] = await execute("INSERT INTO usuarios (nombre, email) VALUES (?, ?)", [
       nombre,
       email
     ]);
@@ -27,4 +27,4 @@ const crearUsuario = async (req, res) => {
   }
 };
 
-module.exports = { obtenerUsuarios, crearUsuario };
+export default { obtenerUsuarios, crearUsuario };

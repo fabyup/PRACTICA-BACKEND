@@ -1,21 +1,21 @@
 // server.js
-const express = require("express");
-const dotenv = require("dotenv");
-const usuarioRoutes = require("./routes/usuarioRoutes");
-const cors = require("cors");
+import express, { json } from "express";
+import { config } from "dotenv";
+import userRoutes from "./routes/userRoutes";
+import cors from "cors";
 
 // Cargar variables de entorno
-dotenv.config();
+config();
 
 // Crear la aplicación Express
 const app = express();
 
 // Middleware
-app.use(express.json()); // Para parsear JSON
+app.use(json()); // Para parsear JSON
 app.use(cors()); // Permitir peticiones CORS (si es necesario)
 
 // Rutas
-app.use("/api", usuarioRoutes);
+app.use("/api", userRoutes);
 
 // Puerto de escucha
 const PORT = process.env.PORT || 3000;
