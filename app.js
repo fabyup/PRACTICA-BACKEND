@@ -1,5 +1,3 @@
-// app.js
-
 import express, { json } from "express";
 import dotenv from "dotenv";
 import cors from "cors";
@@ -23,12 +21,13 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en el puerto ${PORT}`);
 });
-process.on("uncaughtException", error => {
-  console.error("Uncaught Exception:", error);
-  process.exit(1); // Cierra el proceso si hay un error no manejado
-});
 
-process.on("unhandledRejection", error => {
-  console.error("Unhandled Rejection:", error);
-  process.exit(1); // Cierra el proceso si hay una promesa rechazada no manejada
-});
+//process.on("uncaughtException", error => {
+// console.error("Uncaught Exception:", error);
+// process.exit(1); // Cierra el proceso si hay un error no manejado
+//});//
+
+//process.on("unhandledRejection", error => {
+// console.error("Unhandled Rejection:", error);//
+//process.exit(1); // Cierra el proceso si hay una promesa rechazada no manejada
+//});//
