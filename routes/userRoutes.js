@@ -1,13 +1,13 @@
 // routes/usuarioRoutes.js
-import { Router } from "express";
+import { Routes } from "express";
 import userController from "../controllers/userController";
 
-const router = Router();
+const routes = Routes();
 
 // Ruta para obtener todos los usuarios
-router.get("/usuarios", userController.obtenerUsuarios);
+routes.get("/usuarios", userController.obtenerUsuarios);
 
 // Ruta para crear un nuevo usuario
-router.post("/usuarios", userController.crearUsuario);
+routes.post("/usuarios", userController.crearUsuario);
 
-export default router;
+export default routes;
