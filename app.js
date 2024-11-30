@@ -1,11 +1,11 @@
 // server.js
 import express, { json } from "express";
-import { config } from "dotenv";
+import dotenv from "dotenv";
 import userRoutes from "./routes/userRoutes";
 import cors from "cors";
 
 // Cargar variables de entorno
-config();
+dotenv.config();
 
 // Crear la aplicación Express
 const app = express();

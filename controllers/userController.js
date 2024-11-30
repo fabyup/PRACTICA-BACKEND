@@ -1,6 +1,4 @@
 // controllers/usuarioController.js
-import { execute } from "../config/database";
-
 // Obtener todos los usuarios
 const obtenerUsuarios = async (req, res) => {
   try {

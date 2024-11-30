@@ -1,8 +1,7 @@
-// config/db.js
 import { createPool } from "mysql2/promise";
-import dotenv from "dotenv"; // Cargar variables de entorno
+import dotenv from "dotenv";
 dotenv.config();
-// Configuración de la conexión con la base de datos
+
 const connection = createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,

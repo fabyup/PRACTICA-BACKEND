@@ -1,7 +1,8 @@
 // routes/usuarioRoutes.js
 import { Router } from "express";
-const router = Router();
 import { obtenerUsuarios, crearUsuario } from "../controllers/userController";
+
+const router = Router();
 
 // Ruta para obtener todos los usuarios
 router.get("/usuarios", obtenerUsuarios);
