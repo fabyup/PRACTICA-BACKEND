@@ -1,5 +1,5 @@
-// controllers/usuarioController.js
-// Obtener todos los usuarios
+import connection from "../config/database";
+
 const obtenerUsuarios = async (req, res) => {
   try {
     const [rows] = await execute("SELECT * FROM usuarios");
@@ -15,10 +15,10 @@ const crearUsuario = async (req, res) => {
   try {
     const [
       result
-    ] = await execute("INSERT INTO usuarios (nombre, email) VALUES (?, ?)", [
-      nombre,
-      email
-    ]);
+    ] = await connection.execute(
+      "INSERT INTO usuarios (nombre, email) VALUES (?, ?)",
+      [nombre, email]
+    );
     res.status(201).json({ message: "Usuario creado", id: result.insertId });
   } catch (error) {
     res.status(500).json({ message: "Error al crear usuario", error });

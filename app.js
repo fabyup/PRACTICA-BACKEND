@@ -1,11 +1,12 @@
-// server.js
-import express, { json } from "express";
-import dotenv from "dotenv";
-import userRoutes from "./routes/userRoutes";
-import cors from "cors";
+// app.js
+const express = require("express");
+
+const dotenv = require("dotenv");
+const cors = require("cors");
+const userRoutes = require("./routes/userRoutes");
 
 // Cargar variables de entorno
-dotenv.config();
+config();
 
 // Crear la aplicación Express
 const app = express();
