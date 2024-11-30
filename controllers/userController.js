@@ -1,9 +1,10 @@
-import connection from "../config/database";
+import connection from "../config/database"; // Importa la conexión a la base de datos
 
+// Obtener todos los usuarios
 const obtenerUsuarios = async (req, res) => {
   try {
-    const [rows] = await execute("SELECT * FROM usuarios");
-    res.json(rows);
+    const [rows] = await connection.execute("SELECT * FROM usuarios");
+    res.json(rows); // Enviar la respuesta con los usuarios
   } catch (error) {
     res.status(500).json({ message: "Error al obtener usuarios", error });
   }

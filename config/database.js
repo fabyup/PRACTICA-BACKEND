@@ -1,8 +1,10 @@
-const createPool = require("mysql2/promise");
-const dotenv = require("dotenv");
+import { createPool } from "mysql2/promise";
+import dotenv from "dotenv";
 
+// Cargar las variables de entorno
 dotenv.config();
 
+// Crear la conexión a la base de datos
 const connection = createPool({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
