@@ -1,16 +1,14 @@
-import connection from "../config/database"; // Importa la conexión a la base de datos
+import connection from "../config/database.js";
 
-// Obtener todos los usuarios
 const obtenerUsuarios = async (req, res) => {
   try {
     const [rows] = await connection.execute("SELECT * FROM usuarios");
-    res.json(rows); // Enviar la respuesta con los usuarios
+    res.json(rows);
   } catch (error) {
     res.status(500).json({ message: "Error al obtener usuarios", error });
   }
 };
 
-// Crear un nuevo usuario
 const crearUsuario = async (req, res) => {
   const { nombre, email } = req.body;
   try {
