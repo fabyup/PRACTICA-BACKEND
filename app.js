@@ -1,7 +1,7 @@
 import express, { json } from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import userRoutes from "./routes/userRoutes";
+import userRoutes from "./routes/userRoutes"; // Importa las rutas desde el archivo correcto
 
 // Cargar las variables de entorno
 dotenv.config();
@@ -25,9 +25,9 @@ app.listen(PORT, () => {
 //process.on("uncaughtException", error => {
 // console.error("Uncaught Exception:", error);
 // process.exit(1); // Cierra el proceso si hay un error no manejado
-//});//
+//});
 
 //process.on("unhandledRejection", error => {
-// console.error("Unhandled Rejection:", error);//
-//process.exit(1); // Cierra el proceso si hay una promesa rechazada no manejada
-//});//
+// console.error("Unhandled Rejection:", error);
+// process.exit(1);
+//});
