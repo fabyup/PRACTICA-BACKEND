@@ -9,16 +9,17 @@ const obtenerUsuarios = async (req, res) => {
   }
 };
 
+// Crear un nuevo usuario
 const crearUsuario = async (req, res) => {
-  const { nombre, email } = req.body;
+  const { nombre, apellido, fecha_nacimiento, email, telefono } = req.body;
   try {
     const [
       result
     ] = await connection.execute(
-      "INSERT INTO usuarios (nombre, email) VALUES (?, ?)",
-      [nombre, email]
+      "INSERT INTO usuarios (nombre, apellido, fecha_nacimiento, email, telefono) VALUES (?, ?, ?, ?, ?)",
+      [nombre, apellido, fecha_nacimiento, email, telefono]
     );
-    req.status(201).json({ message: "Usuario creado", id: result.insertId });
+    res.status(201).json({ message: "Usuario creado", id: result.insertId });
   } catch (error) {
     res.status(500).json({ message: "Error al crear usuario", error });
   }

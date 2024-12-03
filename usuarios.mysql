@@ -1,25 +1,27 @@
-CREATE DATABASE usuarios;
+-- Crear la base de datos
+CREATE DATABASE IF NOT EXISTS usuarios;
 
+-- Seleccionar la base de datos
+USE usuarios;
 
-
+-- Crear la tabla usuarios
 CREATE TABLE usuarios (
-  id _usuario AUTO_INCREMENT PRIMARY KEY,
+  id_usuario INT AUTO_INCREMENT PRIMARY KEY,
   nombre VARCHAR(255) NOT NULL,
   apellido VARCHAR(100) NOT NULL,
   fecha_nacimiento DATE,
   email VARCHAR(255) NOT NULL UNIQUE,
   telefono VARCHAR(15) NOT NULL
 );
-  
-    INSERT INTO usuarios (nombre, apellido, fecha_nacimiento, email,telefono)
-VALUES ('María', 'López', '1990-05-15', asadsdasd@gmail.com,1122445566);
 
-    
-    
+-- Insertar algunos datos de ejemplo
+INSERT INTO usuarios (nombre, apellido, fecha_nacimiento, email, telefono)
+VALUES ('María', 'López', '1990-05-15', 'asadsdasd@gmail.com', '1122445566');
+
    
-    
+  
 
 
 
 
-INSERT INTO 
+
