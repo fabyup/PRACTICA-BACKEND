@@ -14,14 +14,12 @@ CREATE TABLE usuarios (
   telefono VARCHAR(15) NOT NULL
 );
 
+
 -- Insertar algunos datos de ejemplo
 INSERT INTO usuarios (nombre, apellido, fecha_nacimiento, email, telefono)
 VALUES ('María', 'López', '1990-05-15', 'asadsdasd@gmail.com', '1122445566');
 
- UPDATE usuarios
-SET email="asdfff@gmail.com"
-WHERE id_usuario=1;
-
+ 
 
 
 
