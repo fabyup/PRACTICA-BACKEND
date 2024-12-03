@@ -3,3 +3,5 @@ node_modules
 .env
 pack-lock.json
 package.jason
+.env
+node_modules
