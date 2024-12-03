@@ -19,6 +19,7 @@ CREATE TABLE usuarios (
 INSERT INTO usuarios (nombre, apellido, fecha_nacimiento, email, telefono)
 VALUES ('María', 'López', '1990-05-15', 'asadsdasd@gmail.com', '1122445566');
 
+
  
 
 

@@ -2,9 +2,11 @@ import connection from "../config/database.js";
 
 const obtenerUsuarios = async (req, res) => {
   try {
-    const [rows] = await connection.execute("SELECT * FROM usuarios");
-    req.json(rows);
+    const [rows] = await connection.query("SELECT * FROM usuarios");
+    res.json(rows);
   } catch (error) {
+     console.log(error);
+     
     res.status(500).json({ message: "Error al obtener usuarios", error });
   }
 };
