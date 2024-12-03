@@ -9,5 +9,6 @@ const connection = createPool({
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME
 });
+console.log(connection);
 
 export default connection;
